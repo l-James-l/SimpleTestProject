@@ -22,13 +22,23 @@ public class BasicArithmaticFunctions
         return b != 0 ? a / b : throw new DivideByZeroException("Denominator cannot be zero.");
     }
 
-    public bool GreaterThan(int a, int b)
+    public int HCF(int a, int b)
     {
-        return a > b;
+        while (b != 0)
+        {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return Math.Abs(a);
     }
 
-    public bool LessThanOrEqualTo(int a, int b)
+    public int LCM(int a, int b)
     {
-        return a <= b;
+        if (a == 0 || b == 0)
+        {
+            throw new ArgumentException("Numbers must be non-zero.");
+        }
+        return Math.Abs(a * b) / HCF(a, b);
     }
 }

@@ -4,79 +4,122 @@ namespace ProjectTests;
 
 public class BasicArithmaticFunctionsTests
 {
-    private BasicArithmaticFunctions _basicArithmaticFunctions;
+    private BasicArithmaticFunctions _mathsFunctions;
 
     [SetUp]
     public void Setup()
     {
-        _basicArithmaticFunctions = new BasicArithmaticFunctions();
+        _mathsFunctions = new BasicArithmaticFunctions();
     }
 
     [Test]
-    public void AlwaysPasses()
+    public void GivenTwoIntegers_WhenAdd_ThenReturnsTheirSum()
     {
-        Assert.Pass();
-    }
+        // Arrange
+        int a = 3, b = 5;
 
-    [Test]
-    public void Add_ReturnsCorrectSum()
-    {
-        int result = _basicArithmaticFunctions.Add(3, 5);
+        // Act
+        int result = _mathsFunctions.Add(a, b);
+
+        // Assert
         Assert.That(result, Is.EqualTo(8));
     }
 
     [Test]
-    public void Subtract_ReturnsCorrectDifference()
+    public void GivenTwoIntegers_WhenSubtract_ThenReturnsTheirDifference()
     {
-        int result = _basicArithmaticFunctions.Subtract(10, 4);
+        // Arrange
+        int a = 10, b = 4;
+
+        // Act
+        int result = _mathsFunctions.Subtract(a, b);
+
+        // Assert
         Assert.That(result, Is.EqualTo(6));
     }
 
     [Test]
-    public void Multiply_ReturnsCorrectProduct()
+    public void GivenTwoIntegers_WhenMultiply_ThenReturnsTheirProduct()
     {
-        int result = _basicArithmaticFunctions.Multiply(6, 7);
+        // Arrange
+        int a = 6, b = 7;
+
+        // Act
+        int result = _mathsFunctions.Multiply(a, b);
+
+        // Assert
         Assert.That(result, Is.EqualTo(42));
     }
 
     [Test]
-    public void Divide_ReturnsCorrectQuotient()
+    public void GivenNonZeroDenominator_WhenDivide_ThenReturnsQuotient()
     {
-        int result = _basicArithmaticFunctions.Divide(20, 4);
+        // Arrange
+        int a = 20, b = 4;
+
+        // Act
+        int result = _mathsFunctions.Divide(a, b);
+
+        // Assert
         Assert.That(result, Is.EqualTo(5));
     }
 
     [Test]
-    public void Divide_ByZero_ThrowsException()
+    public void GivenZeroDenominator_WhenDivide_ThenThrowsDivideByZeroException()
     {
-        Assert.Throws<DivideByZeroException>(() => _basicArithmaticFunctions.Divide(10, 0));
+        // Arrange
+        int a = 10, b = 0;
+
+        // Act & Assert
+        Assert.Throws<DivideByZeroException>(() => _mathsFunctions.Divide(a, b));
     }
 
     [Test]
-    public void GreaterThan_ReturnsTrue_WhenFirstIsGreater()
+    public void GivenTwoIntegers_WhenHCF_ThenReturnsGreatestCommonFactor()
     {
-        bool result = _basicArithmaticFunctions.GreaterThan(7, 3);
-        Assert.That(result, Is.True);
+        // Arrange
+        int a = 54, b = 24;
+
+        // Act
+        int result = _mathsFunctions.HCF(a, b);
+
+        // Assert
+        Assert.That(result, Is.EqualTo(6));
     }
 
     [Test]
-    public void LessThanOrEqualTo_ReturnsTrue_WhenFirstIsLess()
+    public void GivenNegativeInputs_WhenHCF_ThenReturnsPositiveHCF()
     {
-        bool result = _basicArithmaticFunctions.LessThanOrEqualTo(4, 4);
-        Assert.That(result, Is.True);
+        // Arrange
+        int a = -8, b = 12;
+
+        // Act
+        int result = _mathsFunctions.HCF(a, b);
+
+        // Assert
+        Assert.That(result, Is.EqualTo(4));
     }
 
     [Test]
-    public void LessThanOrEqualTo_ReturnsFalse_WhenFirstIsGreater()
+    public void GivenNonZeroIntegers_WhenLCM_ThenReturnsLeastCommonMultiple()
     {
-        bool result = _basicArithmaticFunctions.LessThanOrEqualTo(5, 2);
-        Assert.That(result, Is.False);
+        // Arrange
+        int a = 4, b = 6;
+
+        // Act
+        int result = _mathsFunctions.LCM(a, b);
+
+        // Assert
+        Assert.That(result, Is.EqualTo(12));
     }
-    
+
     [Test]
-    public void LessThanOrEqualTo_ReturnsFalse_WhenFirstIsEqual()
+    public void GivenZeroInput_WhenLCM_ThenThrowsArgumentException()
     {
-        bool result = _basicArithmaticFunctions.LessThanOrEqualTo(5, 5);
-        Assert.That(result, Is.True);
+        // Arrange
+        int a = 0, b = 5;
+
+        // Act & Assert
+        Assert.Throws<ArgumentException>(() => _mathsFunctions.LCM(a, b));
     }
 }
