@@ -1,5 +1,5 @@
 ﻿namespace Project;
-public class BasicLinqOperation
+public class BasicLinqOperation: IOrderChecker
 {
     public List<int> FilterEvenNumbers(List<int> numbers)
     {
@@ -46,4 +46,23 @@ public class BasicLinqOperation
         }
         return true;
     }
+
+    public bool IsOrdered<T>(List<T> list, Func<T, T, int> comparitor)
+    {
+        for (int i = 0; i < list.Count - 1; i++)
+        {
+            if (comparitor.Invoke(list[i], list[i + 1]) == 0)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+public interface IOrderChecker
+{
+    public bool IsOrdered(List<int> numbers);
+
+    public bool IsOrdered<T>(List<T> list, Func<T, T, int> comparitor);
 }
