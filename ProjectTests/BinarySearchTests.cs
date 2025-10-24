@@ -21,6 +21,7 @@ public class BinarySearchTests
     public void GivenOrderedNumericList_WhenNumericBinarySearch_TargetExists_ThenReturnsIndex()
     {
         // Arrange
+        _orderChecker.IsOrdered(Arg.Any<List<int>>(), Arg.Any<Func<int, int, int>>()).Returns(true);
         var list = new List<int> { 1, 2, 3, 4, 5 };
         int target = 4;
 
