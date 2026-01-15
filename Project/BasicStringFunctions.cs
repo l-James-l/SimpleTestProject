@@ -4,8 +4,7 @@ public class BasicStringFunctions
 {
     public string Concatenate(string str1, string str2)
     {
-        //return str1 + str2;
-        return "";
+        return str1 + str2;
     }
 
     public string AnotherConcatenate(string str3, string str4)
