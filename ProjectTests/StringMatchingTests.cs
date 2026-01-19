@@ -1,4 +1,4 @@
-﻿using Project;
+﻿using Project.StringMatching;
 
 namespace ProjectTests;
 
@@ -31,6 +31,20 @@ public class StringMatchingTests
         Assert.That("abcdefghijk".KmpMatching("ijk"), Is.EqualTo(8));
         Assert.That("abcdefghijk".KmpMatching("ijkl"), Is.EqualTo(-1));
         Assert.That("abcdefghijk".KmpMatching("abcdef"), Is.EqualTo(0));
+    }
+
+    [Test]
+    public void ApproxKMatchTests()
+    {
+        //Assert.That("Have a happe birthday".FirstKMatch("happy", 1), Is.EqualTo(6));
+        //Assert.That("Have a happy birthday".FirstKMatch("happy", 0), Is.EqualTo(7));
+        //Assert.That("Have a hapy birthday".FirstKMatch("happy", 1), Is.EqualTo(7));
+    }
+
+    [Test]
+    public void LongestCommonSubsequenceTests()
+    {
+        Assert.That("AGGTAB".LCS("GXTXAYB"), Is.EqualTo(4));
     }
 }
 

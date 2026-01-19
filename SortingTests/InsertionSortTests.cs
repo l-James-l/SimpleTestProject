@@ -1,6 +1,7 @@
-using Project;
 
-namespace ProjectTests;
+using Sorting;
+
+namespace SortingTests;
 
 public class InsertionSortTests
 {

@@ -1,4 +1,4 @@
-﻿namespace Project;
+﻿namespace Project.StringMatching;
 
 public static class StringMatching
 {
@@ -106,5 +106,37 @@ public static class StringMatching
             }
         }
         return strictBorders;
+    }
+}
+
+public static class LongestCommonSubstring
+{
+    /// <summary>
+    /// Finds the longest sequence of characters that appears in both strings.
+    /// not necessarily in 1 contiguous block.
+    /// </summary>
+    public static int LCS(this string s1, string s2)
+    {
+        int[,] counts = new int[s1.Length, s2.Length];
+
+        for (int i=0; i < s1.Length; i++)
+        {
+            counts[i, 0] = s1[i] == s2[0] ? 1 : 0;
+        }
+        for (int j = 0; j < s2.Length; j++)
+        {
+            counts[0, j] = s1[0] == s2[j] ? 1 : 0;
+        }
+
+        for (int i=1; i < s1.Length; i++)
+        {
+            for (int j=1; j < s2.Length; j++)
+            {
+                int largestPre = Math.Max(counts[i - 1, j - 1], Math.Max(counts[i - 1, j], counts[i, j - 1]));
+                counts[i, j] = s1[i] == s2[j] ? largestPre + 1 : largestPre;
+            }
+        }
+
+        return counts[counts.GetLength(0)-1, counts.GetLength(1)-1];
     }
 }

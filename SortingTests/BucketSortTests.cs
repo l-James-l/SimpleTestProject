@@ -1,6 +1,6 @@
-using Project;
+using Sorting;
 
-namespace ProjectTests;
+namespace SortingTests;
 
 public class BucketSortTests
 {

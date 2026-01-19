@@ -1,4 +1,4 @@
-﻿namespace Project;
+﻿namespace Sorting;
 
 public class BucketSort
 {

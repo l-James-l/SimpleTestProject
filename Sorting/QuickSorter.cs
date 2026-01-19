@@ -1,23 +1,23 @@
-﻿namespace Project;
+﻿namespace Sorting;
 
 public class QuickSorter
 {
-    public void Sort<T>(List<T> input, Func<T, T, int> comparitor)
+    public void Sort<T>(List<T> input, Func<T, T, int> comparator)
     {
-        QuickSortRecursive(input, 0, input.Count - 1, comparitor);
+        QuickSortRecursive(input, 0, input.Count - 1, comparator);
     }
 
-    private void QuickSortRecursive<T>(List<T> input, int start, int end, Func<T, T, int> comparitor)
+    private void QuickSortRecursive<T>(List<T> input, int start, int end, Func<T, T, int> comparator)
     {
         if (start < end)
         {
-            int pivotIndex = Partition(input, start, end, comparitor);
-            QuickSortRecursive(input, start, pivotIndex - 1, comparitor);
-            QuickSortRecursive(input, pivotIndex + 1, end, comparitor);
+            int pivotIndex = Partition(input, start, end, comparator);
+            QuickSortRecursive(input, start, pivotIndex - 1, comparator);
+            QuickSortRecursive(input, pivotIndex + 1, end, comparator);
         }
     }
 
-    private int Partition<T>(List<T> input, int start, int end, Func<T, T, int> comparitor)
+    private int Partition<T>(List<T> input, int start, int end, Func<T, T, int> comparator)
     {
         //Complexity O(n), thus giving overall complexity of O(n log n) on average, and O(n^2) in the worst case.
         T pivot = input[end];
@@ -25,11 +25,11 @@ public class QuickSorter
         int j = end - 1;
         while (i <= j)
         {
-            while (i <= j && comparitor.Invoke(input[i], pivot) <= 0)
+            while (i <= j && comparator.Invoke(input[i], pivot) <= 0)
             {
                 i++;
             }
-            while (i <= j && comparitor.Invoke(input[j], pivot) >= 0)
+            while (i <= j && comparator.Invoke(input[j], pivot) >= 0)
             {
                 j--;
             }
