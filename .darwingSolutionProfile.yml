@@ -1,3 +1,0 @@
-TestProjects:
-  - ProjectTests    
-SkipTestingNoActiveMutants: true
