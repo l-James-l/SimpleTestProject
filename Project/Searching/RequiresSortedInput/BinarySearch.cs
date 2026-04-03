@@ -1,4 +1,4 @@
-﻿namespace Project;
+﻿namespace Project.Searching.RequiresSortedInput;
 
 public class BinarySearch
 {

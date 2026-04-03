@@ -12,6 +12,11 @@ public class BasicArithmaticFunctions
         return a - b;
     }
 
+    public int NestedAddSubtract(int a, int b)
+    {
+        return ((a + b) - a);
+    }
+
     public int Multiply(int a, int b)
     {
         return a * b;

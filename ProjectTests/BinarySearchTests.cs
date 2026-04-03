@@ -1,5 +1,6 @@
 using NSubstitute;
 using Project;
+using Project.Searching.RequiresSortedInput;
 
 namespace ProjectTests;
 
