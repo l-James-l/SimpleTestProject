@@ -1,3 +1,17 @@
 TestProjects:
-  - ProjectTests    
-SkipTestingNoActiveMutants: true
+- ProjectTests
+- SortingTests
+IgnoreProjects: []
+SourceCodeProjects:
+- Project
+- CLI
+- Sorting
+DisabledMutationTypes: []
+SingleMutantPerLine: true
+BuildTimeout: 30
+TestRunTimeout: 1200
+SkipTestingNoActiveMutants: false
+UseAdvancedProjectTypeAnalysis: false
+DefaultGitComparisonBranch: master
+MutationTestTimeoutScaler: 2
+AiTestGenerationAdditionalInstructions: ''

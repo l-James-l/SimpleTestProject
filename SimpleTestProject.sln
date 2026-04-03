@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.2.11408.102 d18.0
+VisualStudioVersion = 18.2.11408.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project", "Project\Project.csproj", "{0FB07DEB-9DB2-44BD-AD4C-7F98DCE23C63}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sorting", "Sorting\Sorting.csproj", "{FBFFFE09-EBAE-4F86-A056-E4D4E412BF74}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortingTests", "SortingTests\SortingTests.csproj", "{2AB83317-943F-4845-9DA9-1AAF86266565}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfProject", "WpfProject\WpfProject.csproj", "{138E1D62-693F-4D5C-9C86-61F3C77A950B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{2AB83317-943F-4845-9DA9-1AAF86266565}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AB83317-943F-4845-9DA9-1AAF86266565}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AB83317-943F-4845-9DA9-1AAF86266565}.Release|Any CPU.Build.0 = Release|Any CPU
+		{138E1D62-693F-4D5C-9C86-61F3C77A950B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{138E1D62-693F-4D5C-9C86-61F3C77A950B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{138E1D62-693F-4D5C-9C86-61F3C77A950B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{138E1D62-693F-4D5C-9C86-61F3C77A950B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
